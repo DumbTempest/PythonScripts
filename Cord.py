@@ -20,6 +20,8 @@ def update_saver_cord():
 root = tk.Tk()
 root.title("Mouse Coord Tracker")
 
+root.geometry("500x300")
+
 position_label = tk.Label(root, text="Mouse Coord: (0, 0)", font=("Arial", 14))
 position_label.pack(pady=15)
 
