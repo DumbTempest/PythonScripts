@@ -1,20 +1,20 @@
 import tkinter as tk
 import pyautogui
 
-saved_positions = []
+saver_cord = []
 
-def update_position():
+def up_cord():
     x, y = pyautogui.position()
     position_label.config(text=f"Mouse Position: ({x}, {y})")
-    root.after(100, update_position)
+    root.after(100, up_cord)
 
 def save_cord(event=None):
     x, y = pyautogui.position()
-    saved_positions.append((x, y))
-    update_saved_positions()
+    saver_cord.append((x, y))
+    update_saver_cord()
 
-def update_saved_positions():
-    saved_text = "\n".join([f"({x}, {y})" for x, y in saved_positions])
+def update_saver_cord():
+    saved_text = "\n".join([f"({x}, {y})" for x, y in saver_cord])
     saved_label.config(text=saved_text)
 
 root = tk.Tk()
@@ -31,5 +31,5 @@ saved_label.pack(pady=10)
 
 root.bind("<s>", save_cord)
 
-update_position()
+up_cord()
 root.mainloop()
