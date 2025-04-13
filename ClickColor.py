@@ -2,6 +2,7 @@ import pyautogui
 from PIL import ImageGrab
 import time
 
+
 def get_pixel_color():
     try:
         x, y = pyautogui.position() 
